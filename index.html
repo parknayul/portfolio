@@ -1,11 +1,748 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>박나율 포트폴리오</title>
+    <title>Nayul`s portfolio</title>
+    <link rel="stylesheet" href="lib/jquery.fullPage.css">
+    <link rel="stylesheet" href="dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolio.scss">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="/favicon_io/favicon-16x16.png" type="image/x-icon">
+    <link rel="icon" href="/favicon_io/favicon-32x32.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dist/jquery.fancybox.min.js"></script>
+    <script src="lib/jquery.fullPage.js"></script>
+    <script src="lib/scrolloverflow.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#fullpage').fullpage({
+                // 옵션 설정
+                scrollOverflow: true,
+                navigation: true, // 네비게이션 표시 여부
+                navigationPosition: 'right', // 네비게이션 위치
+                navigationTooltips: ['HOME', 'INTRO', 'PUBLISHING', 'DESIGN', 'CONTACT'],
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#FFFFFF'], // 섹션 배경색
+                showActiveTooltip: true,
+            });//fullpage
+
+            let depth01 = $('.depth01>a');
+
+            console.log($('.depth01 a').position().left)
+            $('.depth01').mouseenter(function () {
+                console.log($(this).position().left)
+                //position().left
+                //부모가 가지는 위치에서 부터 시작
+                //선택된 요소의 x축 좌표값을 가짐.
+                let move = $(this).position().left;
+                let thisWidth = $(this).outerWidth();
+                let moveLeft = thisWidth * 0.5;
+                $('.marker').stop().animate({
+                    left: move + moveLeft,
+                });
+            });//.menu ul li .mouseenter()
+            depth01.mouseleave(function () {
+                $('.marker').stop().animate({
+                    left: '-100%' // 왼쪽으로 이동하여 사라지도록 애니메이션 적용
+                });
+            });
+
+            //텍스트 타이핑
+            let content = "Hello! I`m Nayul";
+            let subContent = "This is nayul`s portfolio";
+            let text = document.querySelector(".main_title");
+            let subText = document.querySelector(".sub_title");
+            let i = 0;
+            let j = 0;
+
+            function typing() {
+                if (i < content.length) {
+                    let txt = content.charAt(i);
+                    text.innerHTML += txt;
+                    i++;
+                } else if (j < subContent.length) {
+                    let subTxt = subContent.charAt(j);
+                    subText.innerHTML += subTxt;
+                    j++;
+                }
+            }
+
+            setInterval(typing, 100);
+
+            //팬시박스
+            $(document).ready(function () {
+                $("[data-fancybox]").fancybox({
+                    // 여기에 FancyBox 설정을 추가할 수 있습니다.
+                });
+            });
+
+            //빛나는 별
+
+
+            //스와이퍼슬라이드
+            var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            var swiper = new Swiper(".design", {
+                slidesPerView: 4,
+                spaceBetween: 0,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+
+        });
+    </script>
 </head>
+
 <body>
-    
+    <header class="header" id="header">
+        <div class="inner">
+            <h1>
+                <a href="#"><img src="img/logo.png" alt="로고" style="height: 100px;" /></a>
+            </h1>
+            <nav>
+                <ul class="depth01">
+                    <a href="#">HOME</a>
+                </ul><!-- .depth01 end -->
+                <ul class="depth01">
+                    <a href="#">INTRO</a>
+                </ul><!-- .depth01 end -->
+                <ul class="depth01">
+                    <a href="#">PUBLISHING</a>
+                </ul><!-- .depth01 end -->
+                <ul class="depth01">
+                    <a href="#">DESIGN</a>
+                </ul><!-- .depth01 end -->
+                <ul class="depth01">
+                    <a href="#">CONTACT</a>
+                </ul><!-- .depth01 end -->
+                <div class="marker">
+                </div><!-- .marker -->
+            </nav>
+        </div><!-- .inner end -->
+    </header><!-- .header end -->
+    <div id="fullpage"><!-- id명이랑 class명은 절대 변경하지말기 -->
+        <div class="section" id="section0">
+            <div class="shine1">
+                <img src="img/Asset 1 1.png" alt="" />
+            </div><!-- .shine1 end -->
+            <div class="shine2">
+                <img src="img/Asset 1 4.png" alt="" />
+            </div><!-- .shine1 end -->
+            <div class="shine3">
+                <img src="img/Asset 1 1.png" alt="" />
+            </div><!-- .shine1 end -->
+            <div class="shine4">
+                <img src="img/Asset 1 4.png" alt="" />
+            </div><!-- .shine1 end -->
+            <div class="moon">
+            </div><!-- .moon -->
+            <div class="main_text">
+                <h1 class="main_title"></h1>
+                <p class="sub_title"></p>
+            </div><!-- main_text -->
+
+            <div class="scroll">
+                <img src="img/mouse_scroll 1.png" alt="scroll" />
+                <span>scroll down</span>
+            </div><!-- .scroll -->
+        </div>
+
+        <div class="section" id="section1">
+            <div class="inner">
+                <div class="title">
+                    <h1>INTRO</h1>
+                </div><!-- .title end -->
+                <div class="shadow">
+                    <h2>INTRO</h2>
+                </div>
+                <div class="profile_wrap">
+                    <div class="profile">
+                        <div class="profile_img">
+                            <img src="img/리락쿠마_수정.png" alt="프로필 이미지" />
+                        </div> <!-- .profile_img end -->
+                        <div class="text">
+                            <h4>박 나 율</h4>
+                            <p>Park Nayul</p>
+                            <span>1992.01.26</span>
+                        </div><!-- .text -->
+                    </div><!-- .profile -->
+                    <div class="profile_info">
+                        <div class="certificate">
+                            <h3>CERTIFICATE</h3>
+                            <p>2024.03 GTQ 1급</p>
+                        </div><!-- .certificate end -->
+                        <div class="education">
+                            <h3>EDUCATION</h3>
+                            <div class="green">
+                                <p>2024.04</p>
+                                <p>그린컴퓨터아카데미 UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료</p>
+                            </div><!-- .green end -->
+                            <div class="University">
+                                <p>2014.03</p>
+                                <p>동서대학교 일본어학과 졸업</p>
+                            </div><!-- .University end -->
+                        </div><!-- .education -->
+                        <div class="skill">
+                            <h3>SKILL</h3>
+                            <div class="skill_top">
+                                <img src="img/HTML5_icon-icons.com_66225.png" alt="HTML" />
+                                <img src="img/CSS.png" alt="css" />
+                                <img src="img/js.png" alt="js" />
+                            </div><!-- .skill_top end -->
+                            <div class="skill_bottom">
+                                <img src="img/photoshop.png" alt="photoshop" />
+                                <img src="img/illust.png" alt="illust" />
+                                <img class="figma" src="img/figma.png" alt="figma" />
+                            </div><!-- .sill_bottom -->
+                        </div><!-- .skill end -->
+                    </div><!-- .profile_info -->
+                </div><!-- .profile_wrap -->
+            </div><!-- .inner end -->
+        </div>
+        <div class="section" id="section2">
+            <div class="bg">
+                <div class="inner">
+                    <div class="title">
+                        <h2><span>PUBLI</span>SHING</h2>
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도목업.png" alt="닌텐도pc 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도_모바일_목업.png" alt="">
+                                            </figure>
+                                        </div><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>Nintendo</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>리뉴얼</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Responsive Web</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>디자인, 퍼블리싱 100%</span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/F5NATURE_PC_mopckup.png" alt="F5NATURE_PC 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/F5Nature_mobile.mockup.png" alt="F5Nature_mobile 목업">
+                                            </figure>
+                                        </div><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>F5Nature</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>리뉴얼</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Responsive Web</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>퍼블리싱 100%</sp an>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/aromatica_pcver_mockup.png" alt="aromatica_pcver 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/aromatica_mobilever_mockup.png"
+                                                    alt="aromatica_mobilever 목업">
+                                            </figure>
+                                        </div><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>Aromatica</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>리뉴얼</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Responsive Web</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>퍼블리싱 100%</span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                            <div class="btn">
+                                                <a href="#">
+                                                    process
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도목업.png" alt="닌텐도pc 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도_모바일_목업.png" alt="">
+                                            </figure>
+                                        </div><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>Afterblow</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>리뉴얼</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Website</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>디자인 50%, 퍼블리싱 100%</span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                            <div class="btn">
+                                                <a href="#">
+                                                    process
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/메인페이지_목업.png" alt="공차_PC 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <!-- <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도_모바일_목업.png" alt="">
+                                            </figure>
+                                        </div> --><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>Gongcha</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>리뉴얼</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Website</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>디자인, 퍼블리싱 100%</span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                            <div class="btn">
+                                                <a href="#">
+                                                    process
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                            <div class="swiper-slide">
+                                <div class="list">
+                                    <div class="mockup_wrap">
+                                        <div class="pc_mockup">
+                                            <figure>
+                                                <img src="img/CGV_모작_MOCKUP.png" alt="CGV_PC 목업" />
+                                            </figure>
+                                        </div><!-- .pc_mockup -->
+                                        <!-- <div class="mobile_mockup">
+                                            <figure>
+                                                <img src="img/닌텐도_모바일_목업.png" alt="">
+                                            </figure>
+                                        </div> --><!-- .mobile_mockup -->
+                                    </div><!-- .mockup_wrap -->
+                                    <div class="text_box">
+                                        <div class="main_title">
+                                            <h2>CGV</h2>
+                                        </div><!-- .title end -->
+                                        <div class="sub_title">
+                                            <ul>
+                                                <li>
+                                                    <span>PROJECT</span>
+                                                    <span>모작</span>
+                                                </li>
+                                                <li>
+                                                    <span>TYPE</span>
+                                                    <span>Website</span>
+                                                </li>
+                                                <li>
+                                                    <span>PAGE</span>
+                                                    <span>MainPage</span>
+                                                </li>
+                                                <li>
+                                                    <span>TOOL</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                </li>
+                                                <li>
+                                                    <span>참여도</span>
+                                                    <span>퍼블리싱 100%</span>
+                                                </li>
+                                            </ul>
+                                        </div><!-- .sub_title end -->
+                                        <div class="btn_wrap">
+                                            <div class="btn">
+                                                <a href="#">
+                                                    website
+                                                </a>
+                                            </div><!-- .btn end -->
+                                            <div class="btn">
+                                                <a href="#">
+                                                    process
+                                                </a>
+                                            </div><!-- .btn end -->
+                                        </div><!-- .btn_wrap end -->
+                                    </div><!-- .text_box -->
+                                </div><!-- .list -->
+                            </div><!-- .swiper-slide end -->
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div><!-- .inner end -->
+            </div><!-- .bg -->
+        </div><!-- #section2 end -->
+
+        <div class="section" id="section3">
+            <div class="bg">
+                <div class="inner">
+                    <div class="title">
+
+                    </div><!-- .title -->
+
+                    <div class="list">
+                        <div class="title_box">
+                            <div class="title_top">
+                                <h3>GRAPHIC</h3>
+                                <span>DESIGN</span>
+                            </div><!-- .title_top -->
+                            <div class="title_bottom">
+                                <h3>photoshop</h3>
+                                <span>illustlator</span>
+                            </div><!-- .title_bottom -->
+                        </div><!-- .title_box end -->
+                        <!-- Swiper -->
+                        <div class="swiper design">
+                            <span>이미지를 클릭 하시면 원본 사이즈 확인이 가능합니다.</span>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/Artboard 1 copy 2-80.jpg" data-fancybox data-caption="일러스트 작업물">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 2-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                    <div class="tool_text">
+                                        <p>Adobe illustlator</p>
+                                    </div><!-- .tool_text end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/Artboard 1 copy 3-80.jpg" data-fancybox data-caption="일러스트 작업물">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 3-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                    <div class="tool_text">
+                                        <p>Adobe illustlator</p>
+                                    </div><!-- .tool_text end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/Artboard 1 copy-80.jpg" data-fancybox data-caption="일러스트 작업물">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                    <div class="tool_text">
+                                        <p>Adobe illustlator</p>
+                                    </div><!-- .tool_text end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/Artboard 6-80.jpg" data-fancybox data-caption="일러스트 작업물">
+                                            <figure>
+                                                <img src="img/Artboard 6-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                    <div class="tool_text">
+                                        <p>Adobe illustlator</p>
+                                    </div><!-- .tool_text end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/Artboard 1-80.jpg" data-fancybox data-caption="일러스트 작업물">
+                                            <figure>
+                                                <img src="img/Artboard 1-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                    <div class="tool_text">
+                                        <p>Adobe illustlator</p>
+                                    </div><!-- .tool_text end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/gs샵_스타벅스-이벤트-상세페이지.jpg" data-fancybox data-caption="포토샵 작업물">
+                                            <figure>
+                                                <img src="img/gs샵_스타벅스-이벤트-상세페이지.jpg" alt="포토샵 작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="img/부산안심관광기획전.jpg" data-fancybox data-caption="포토샵 작업물">
+                                            <figure>
+                                                <img src="img/부산안심관광기획전.jpg" alt="포토샵 작업물2">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 2-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 2-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 2-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <a href="#">
+                                            <figure>
+                                                <img src="img/Artboard 1 copy 2-80.jpg" alt="일러스트작업물1">
+                                            </figure>
+                                        </a>
+                                    </div><!-- .item end -->
+                                </div><!-- .swiper-slide end -->
+
+                            </div><!-- .swiper-wrapper end -->
+                            <div class="swiper-pagination"></div>
+                        </div><!-- .swiper design end -->
+                    </div><!-- .list end -->
+                </div><!-- .inner end -->
+            </div><!-- .bg -->
+        </div>
+        <div class="section" id="section4">
+            <div class="bg">
+                <div class="inner">
+                    <div class="info_wrap">
+                        <div class="title">
+                            <h1>CONTACK ME!</h1>
+                        </div><!-- .title -->
+                        <div class="qr_code">
+                            <figure>
+                                <img src="img/qr.png" alt="큐알코드" />
+                            </figure>
+                        </div><!-- .qr_code -->
+                        <div class="my_info">
+                            <p>010-7122-2627</p>
+                            <span>ooo828282@gmail.com</span>
+                        </div><!-- .my_info -->
+                    </div><!-- .info_wrap end -->
+                    <div class="text_slide">
+                        <p>Thank You For Watching Thank You For Watching Thank You For Watching Thank You For Watching
+                            Thank You For Watching
+                            Thank You For Watching Thank You For Watching Thank You For Watching Thank You For Watching
+                            Thank You For Watching
+                        </p>
+                    </div><!-- .text_slide end -->
+                </div><!-- .inner end-->
+            </div><!-- .bg end -->
+        </div><!-- #section4 end -->
+
+        <footer class="section fp-auto-height" id="footer">
+            <p>푸터입니다.</p>
+            <a href="#">010-7122-2627</a>
+        </footer><!-- #footer end -->
+    </div><!-- #fullpage end -->
 </body>
+
 </html>

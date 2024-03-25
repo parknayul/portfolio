@@ -1,0 +1,275 @@
+@charset "utf-8";
+@import url(css/reset.css);
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    line-height: 1;
+    color: #333;
+    font-family: 'Pretendard-Regular';
+}
+
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active+.fp-tooltip {
+    color: #333;
+}
+
+/* .fp-viewing-0 .depth01:first-child.marker {
+    background: url(img/동그라미.png)center center / 100px 100px no-repeat;
+}
+.fp-viewing-1 .depth01:nth-child(2) {
+    background: url(img/동그라미.png)center center / 100px 100px no-repeat;
+}
+.fp-viewing-2 .depth01:nth-child(3) {
+    background: url(img/동그라미.png)center center / 100px 100px no-repeat;
+}
+.fp-viewing-3 .depth01:nth-child(4) {
+    background: url(img/동그라미.png)center center / 100px 100px no-repeat;
+}
+.fp-viewing-4 .depth01:nth-child(5) {
+    background: url(img/동그라미.png)center center / 100px 100px no-repeat;
+}
+
+.fp-viewing-2 .header {
+    background-color: #fff;
+}
+ */
+
+.header {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    font-family: 'Pretendard-Regular';
+    z-index: 1;
+
+    .inner {
+        max-width: 1720px;
+        margin: 0 auto;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        gap: 90px;
+
+        h1 img {
+            padding-left: 80px;
+        }
+
+        nav{
+            display: flex;
+            position: relative;
+        .depth01 {
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 9;
+                a {
+                    display: block;
+                    width: 100%;
+                    line-height: 150px;
+                    padding: 0 30px;
+                }
+            }
+        }
+        .marker{
+        width: 80px;
+        height: 80px;
+        background-color:#fff098;
+        border-radius: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        left:-1000px;
+         bottom: 2rem;
+         box-shadow: 0 0 5px 5px #fff098;
+        }
+    }
+ }/* .header end */
+
+#section0 {
+    position: relative;
+    background: url(img/bg.png)center center / cover no-repeat;
+    height: 100vh;
+    font-family: 'Pretendard-Regular';
+    &::after {
+        content: '';
+        width: 1px;
+        height: 100vh;
+        position: absolute;
+        left: 360px;
+        display: block;
+        background-color: #fff;
+    }
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top:150px;
+        display: block;
+        background-color: #fff;
+        z-index: 999;
+    }
+
+        .shine1 {
+            position: absolute;
+            top:20%;
+            left: 30%;
+        }
+        .shine2 {
+            position: absolute;
+            bottom:20%;
+            left: 30%;
+        }
+        .shine3 {
+            position: absolute;
+            bottom:20%;
+            right:30%;
+        }
+        .shine4 {
+            position: absolute;
+            top:20%;
+            right:30%;
+        }
+
+        .moon {
+            width: 530px;
+            height: 530px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            background-color: #F4EDA7;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% {
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px 20px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+            }
+        }
+        
+
+        .main_text {
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top:50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+        }
+        p {
+            position: absolute;
+            top:58%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+        }
+    }
+    
+    .scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        bottom: 6%;
+        transform: translateX(-50%);
+        animation: motion 0.7s linear 0s infinite alternate; margin-bottom: 0;
+        img {
+            width: 22px;
+            height: 66px;
+            object-fit: contain;
+        }
+        span {
+            display: block;
+            font-size: 18px;
+            color: #fff;
+        }
+    }
+    @keyframes motion {
+        0% {margin-top: 0px;}
+        100% {margin-bottom: 10px;}
+    }
+}/* #section0 end */
+
+#section1 {
+    position: relative;
+    background: url(img/bg2.png) center center / cover no-repeat;
+    &::after {
+        content: '';
+        width: 1px;
+        height: 100vh;
+        position: absolute;
+        left: 360px;
+        display: block;
+        background-color: #fff;
+    }
+    &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom:175px;
+        display: block;
+        background-color: #fff;
+        z-index: 999;
+    }
+    .inner {
+        max-width: 1720px;
+        margin: 0 auto;
+        height: 600px;
+        .title {
+            margin-left: 300px;
+            position: relative;
+            h1 {
+            font-size: 80px;
+            color: #CB98FF;
+            text-shadow: 0 0 10px rgba(203, 152, 255, 0.726); 
+            animation: neon-flicker 1s infinite alternate;
+            font-weight: bold;
+            }
+        }
+        .shadow{
+            margin-left: 300px;
+            position: absolute;
+            top:177px;
+            left: 104px;
+        h2 {
+            font-size: 80px;
+            font-weight: bold;
+        }
+    }
+    @keyframes neon-flicker {
+    0% {
+        text-shadow: 
+        0 0 10px rgba(250, 241, 114, 0.7), 
+        0 0 20pxrgba(250, 241, 114, 0.7), 
+        0 0 30px rgba(250, 241, 114, 0.7);
+    }
+    100% {
+        text-shadow: 
+        0 0 20px rgba(250, 241, 114, 0.7), 
+        0 0 30px rgba(250, 241, 114, 0.7), 
+        0 0 40px rgba(250, 241, 114, 0.7);
+    }
+}
+  }
+}/* #section1 end */
+
+
+
+
