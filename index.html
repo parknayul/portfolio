@@ -29,6 +29,7 @@
                 navigationPosition: 'right', // 네비게이션 위치
                 navigationTooltips: ['HOME', 'INTRO', 'PUBLISHING', 'DESIGN', 'CONTACT'],
                 sectionsColor: ['#f2f2f2', '#4BBFC3', '#FFFFFF'], // 섹션 배경색
+                anchors: ['cont1', 'cont2', 'cont3', 'cont4', 'cont5', 'cont6'],
                 showActiveTooltip: true,
             });//fullpage
 
@@ -83,7 +84,25 @@
             });
 
             //빛나는 별
+            $(document).ready(function () {
+                var stars = 800;
+                var $stars = $(".stars");
+                var r = 800;
+                for (var i = 0; i < stars; i++) {
+                    var $star = $("<div/>").addClass("star");
+                    $stars.append($star);
+                }
+                $(".star").each(function () {
+                    var cur = $(this);
+                    var s = 0.2 + (Math.random() * 0.5);
+                    var curR = r + (Math.random() * 300);
+                    cur.css({
+                        transformOrigin: "0 0 " + curR + "px",
+                        transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
 
+                    })
+                })
+            });
 
             //스와이퍼슬라이드
             var swiper = new Swiper(".mySwiper", {
@@ -118,19 +137,19 @@
             </h1>
             <nav>
                 <ul class="depth01">
-                    <a href="#">HOME</a>
+                    <a href="#cont1">HOME</a>
                 </ul><!-- .depth01 end -->
                 <ul class="depth01">
-                    <a href="#">INTRO</a>
+                    <a href="#cont2">INTRO</a>
                 </ul><!-- .depth01 end -->
                 <ul class="depth01">
-                    <a href="#">PUBLISHING</a>
+                    <a href="#cont3">PUBLISHING</a>
                 </ul><!-- .depth01 end -->
                 <ul class="depth01">
-                    <a href="#">DESIGN</a>
+                    <a href="#cont4">DESIGN</a>
                 </ul><!-- .depth01 end -->
                 <ul class="depth01">
-                    <a href="#">CONTACT</a>
+                    <a href="#cont5">CONTACT</a>
                 </ul><!-- .depth01 end -->
                 <div class="marker">
                 </div><!-- .marker -->
@@ -139,6 +158,9 @@
     </header><!-- .header end -->
     <div id="fullpage"><!-- id명이랑 class명은 절대 변경하지말기 -->
         <div class="section" id="section0">
+            <div class="stars">
+
+            </div>
             <div class="shine1">
                 <img src="img/Asset 1 1.png" alt="" />
             </div><!-- .shine1 end -->
@@ -165,6 +187,9 @@
         </div>
 
         <div class="section" id="section1">
+            <div class="stars">
+
+            </div>
             <div class="inner">
                 <div class="title">
                     <h1>INTRO</h1>
@@ -739,8 +764,10 @@
         </div><!-- #section4 end -->
 
         <footer class="section fp-auto-height" id="footer">
-            <p>푸터입니다.</p>
-            <a href="#">010-7122-2627</a>
+            <div class="footer_txt">
+                <p>본 페이지는 상업목적이 아닌 개인 포트폴리오 용도로 제작 되었습니다.</p>
+                <span>© 2024 Park Nayul. All Rights Reserved.</span>
+            </div><!-- .footer_txt end -->
         </footer><!-- #footer end -->
     </div><!-- #fullpage end -->
 </body>
