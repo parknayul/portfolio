@@ -862,7 +862,8 @@ img {
             }
         }
     }
-
+    .wrapping{
+        display: flex;
     .btn_wrap{
         display: flex;
         flex-direction: column;
@@ -906,10 +907,17 @@ img {
             color: #bbf1ff;
         }
     }
+    .qr_code {
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    }
     }
 }
+}
  }//inner end
- }
+ }//bg end
 }/* #section2 end */
 
 #section3 {

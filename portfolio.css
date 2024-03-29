@@ -830,12 +830,15 @@ body {
   font-size: 20px;
   color: #fff;
 }
-#section2 .bg .inner .swiper-slide .text_box .btn_wrap {
+#section2 .bg .inner .swiper-slide .text_box .wrapping {
+  display: flex;
+}
+#section2 .bg .inner .swiper-slide .text_box .wrapping .btn_wrap {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-#section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn {
+#section2 .bg .inner .swiper-slide .text_box .wrapping .btn_wrap .btn {
   position: relative;
   width: 200px;
   padding: 14px 40px;
@@ -852,13 +855,13 @@ body {
   margin-right: 20px;
   transition: all 0.3s ease-in-out;
 }
-#section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn a {
+#section2 .bg .inner .swiper-slide .text_box .wrapping .btn_wrap .btn a {
   display: block;
   width: 100%;
   font-size: 25px;
   font-weight: 500;
 }
-#section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn .btn::after {
+#section2 .bg .inner .swiper-slide .text_box .wrapping .btn_wrap .btn .btn::after {
   content: "";
   position: absolute;
   top: 0;
@@ -868,10 +871,14 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transition: right 0.2s ease-in-out;
 }
-#section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn:hover {
+#section2 .bg .inner .swiper-slide .text_box .wrapping .btn_wrap .btn:hover {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: 1px solid #76c1ff;
   color: #bbf1ff;
+}
+#section2 .bg .inner .swiper-slide .text_box .wrapping .qr_code img {
+  width: 120px;
+  height: 120px;
 }
 
 /* #section2 end */
