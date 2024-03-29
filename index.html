@@ -76,12 +76,13 @@
                 }
             }
 
-            setInterval(typing, 100);
+            setInterval(typing, 150);
 
             //팬시박스
             $(document).ready(function () {
                 $("[data-fancybox]").fancybox({
                     // 여기에 FancyBox 설정을 추가할 수 있습니다.
+                    
                 });
             });
 
@@ -100,7 +101,7 @@
                     var curR = r + (Math.random() * 300);
                     cur.css({
                         transformOrigin: "0 0 " + curR + "px",
-                        transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
+                        transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -25) + "deg) scale(" + s + "," + s + ")"
 
                     })
                 })
@@ -195,10 +196,10 @@
             <div class="inner">
                 <div class="title">
                     <h1>INTRO</h1>
+                    <div class="shadow">
+                        <h2>INTRO</h2>
+                    </div>
                 </div><!-- .title end -->
-                <div class="shadow">
-                    <h2>INTRO</h2>
-                </div>
                 <div class="profile_wrap">
                     <div class="profile">
                         <div class="profile_img">
@@ -209,6 +210,10 @@
                             <p>Park Nayul</p>
                             <span>1992.01.26</span>
                         </div><!-- .text -->
+                        <div class="btn_wrap">
+                                <div class="btn"><a href="#">이력서 보기</a></div>
+                                <div class="btn"><a href="#">github</a></div>
+                        </div><!-- .btn_wrap -->
                     </div><!-- .profile -->
                     <div class="profile_info">
                         <div class="certificate">
@@ -244,6 +249,11 @@
             </div><!-- .inner end -->
         </div>
         <div class="section" id="section2">
+            <div class="background_img">
+                <figure>
+                    <img src="img/universe planet illustration_4502922.png" alt="행성bg">
+                </figure>
+            </div><!-- .background_img end -->
             <div class="bg">
                 <div class="inner">
                     <div class="title">
@@ -255,15 +265,19 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/닌텐도목업.png" alt="닌텐도pc 목업" />
                                             </figure>
+                                            <span class="nintendo_scroll"></span>
                                         </div><!-- .pc_mockup -->
                                         <div class="mobile_mockup">
                                             <figure>
                                                 <img src="img/닌텐도_모바일_목업.png" alt="">
                                             </figure>
+                                            <span class="nintendoscroll_img"></span>
+                                            <span class="icon"></span>
                                         </div><!-- .mobile_mockup -->
                                     </div><!-- .mockup_wrap -->
                                     <div class="text_box">
@@ -300,6 +314,11 @@
                                                     website
                                                 </a>
                                             </div><!-- .btn end -->
+                                            <div class="btn">
+                                                <a href="#">
+                                                    process
+                                                </a>
+                                            </div><!-- .btn end -->
                                         </div><!-- .btn_wrap end -->
                                     </div><!-- .text_box -->
                                 </div><!-- .list -->
@@ -307,15 +326,19 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/F5NATURE_PC_mopckup.png" alt="F5NATURE_PC 목업" />
                                             </figure>
+                                            <span class="f5nature_scroll"></span>
                                         </div><!-- .pc_mockup -->
                                         <div class="mobile_mockup">
                                             <figure>
                                                 <img src="img/F5Nature_mobile.mockup.png" alt="F5Nature_mobile 목업">
                                             </figure>
+                                            <span class="f5naturescroll_img"></span>
+                                            <span class="icon"></span>
                                         </div><!-- .mobile_mockup -->
                                     </div><!-- .mockup_wrap -->
                                     <div class="text_box">
@@ -359,16 +382,20 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/aromatica_pcver_mockup.png" alt="aromatica_pcver 목업" />
                                             </figure>
+                                            <span class="aromatica_scroll"></span>
                                         </div><!-- .pc_mockup -->
                                         <div class="mobile_mockup">
                                             <figure>
                                                 <img src="img/aromatica_mobilever_mockup.png"
                                                     alt="aromatica_mobilever 목업">
                                             </figure>
+                                            <span class="aromaticascroll_img"></span>
+                                            <span class="icon"></span>
                                         </div><!-- .mobile_mockup -->
                                     </div><!-- .mockup_wrap -->
                                     <div class="text_box">
@@ -391,7 +418,7 @@
                                                 </li>
                                                 <li>
                                                     <span>TOOL</span>
-                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                    <span>HTML, CSS, JavaScript, Jquery, Figma, photoshop</span>
                                                 </li>
                                                 <li>
                                                     <span>참여도</span>
@@ -417,6 +444,7 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/닌텐도목업.png" alt="닌텐도pc 목업" />
@@ -474,10 +502,12 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/메인페이지_목업.png" alt="공차_PC 목업" />
                                             </figure>
+                                            <span class="gongcha_scroll"></span>
                                         </div><!-- .pc_mockup -->
                                         <!-- <div class="mobile_mockup">
                                             <figure>
@@ -505,7 +535,7 @@
                                                 </li>
                                                 <li>
                                                     <span>TOOL</span>
-                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                    <span>HTML, CSS, JavaScript, Figma, photoshop</span>
                                                 </li>
                                                 <li>
                                                     <span>참여도</span>
@@ -531,10 +561,12 @@
                             <div class="swiper-slide">
                                 <div class="list">
                                     <div class="mockup_wrap">
+                                        <p>스크린에 마우스를 올려보세요!</p>
                                         <div class="pc_mockup">
                                             <figure>
                                                 <img src="img/CGV_모작_MOCKUP.png" alt="CGV_PC 목업" />
                                             </figure>
+                                            <span class="cgv_scroll"></span>
                                         </div><!-- .pc_mockup -->
                                         <!-- <div class="mobile_mockup">
                                             <figure>
@@ -562,7 +594,7 @@
                                                 </li>
                                                 <li>
                                                     <span>TOOL</span>
-                                                    <span>HTML, CSS, JavaScript, Jquery, photoshop</span>
+                                                    <span>HTML, CSS, photoshop</span>
                                                 </li>
                                                 <li>
                                                     <span>참여도</span>
@@ -594,6 +626,9 @@
         </div><!-- #section2 end -->
 
         <div class="section" id="section3">
+            <div class="stars">
+
+            </div>
             <div class="bg">
                 <div class="inner">
                     <div class="title">
@@ -738,6 +773,9 @@
             </div><!-- .bg -->
         </div>
         <div class="section" id="section4">
+            <div class="stars">
+
+            </div>
             <div class="bg">
                 <div class="inner">
                     <div class="info_wrap">
@@ -763,6 +801,7 @@
                     </div><!-- .text_slide end -->
                 </div><!-- .inner end-->
             </div><!-- .bg end -->
+            <div class="bottom"><span><img src="img/icons8-갈매기-표-수장-24.png" alt="화살표"></span></div>
         </div><!-- #section4 end -->
 
         <footer class="section fp-auto-height" id="footer">

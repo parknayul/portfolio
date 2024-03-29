@@ -31,7 +31,7 @@ body {
 }
 
 #fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
-  color: #333;
+  color: #fff;
 }
 
 .fp-viewing-cont1 .depth01:first-child {
@@ -54,20 +54,12 @@ body {
   color: #CB98FF;
 }
 
-.fp-viewing-cont3 .header {
-  background-color: #fff;
-}
-
 .fp-viewing-cont3 .header .inner {
   height: 100px;
 }
 
 .fp-viewing-cont3 .header .inner .marker {
   bottom: -30px;
-}
-
-.fp-viewing-cont3 .header {
-  background-color: #fff;
 }
 
 .fp-viewing-cont4 .header .inner {
@@ -78,20 +70,12 @@ body {
   bottom: -30px;
 }
 
-.fp-viewing-cont5 .header {
-  background-color: #fff;
-}
-
 .fp-viewing-cont5 .header .inner {
   height: 100px;
 }
 
 .fp-viewing-cont5 .header .inner .marker {
   bottom: -30px;
-}
-
-.fp-viewing-cont6 .header {
-  background-color: #fff;
 }
 
 .fp-viewing-cont6 .header .inner {
@@ -153,25 +137,25 @@ body {
   background: url(img/bg.png) center center/cover no-repeat;
   height: 100vh;
   font-family: "Pretendard-Regular";
-}
-#section0::after {
-  content: "";
-  width: 1px;
-  height: 100vh;
-  position: absolute;
-  left: 360px;
-  display: block;
-  background-color: #fff;
-}
-#section0::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  top: 150px;
-  display: block;
-  background-color: #fff;
-  z-index: 999;
+  /*     &::after {
+          content: '';
+          width: 1px;
+          height: 100vh;
+          position: absolute;
+          left: 360px;
+          display: block;
+          background-color: #fff;
+      }
+      &::before {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          top:150px;
+          display: block;
+          background-color: #fff;
+          z-index: 999;
+      } */
 }
 @keyframes rotate {
   0% {
@@ -300,25 +284,25 @@ body {
 #section1 {
   position: relative;
   background: url(img/bg2.png) center center/cover no-repeat;
-}
-#section1::after {
-  content: "";
-  width: 1px;
-  height: 100vh;
-  position: absolute;
-  left: 360px;
-  display: block;
-  background-color: #fff;
-}
-#section1::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  bottom: 135px;
-  display: block;
-  background-color: #fff;
-  z-index: 999;
+  /*     &::after {
+          content: '';
+          width: 1px;
+          height: 100vh;
+          position: absolute;
+          left: 360px;
+          display: block;
+          background-color: #fff;
+      }
+      &::before {
+          content: '';
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          bottom:135px;
+          display: block;
+          background-color: #fff;
+          z-index: 999;
+      } */
 }
 @keyframes rotate {
   0% {
@@ -350,8 +334,9 @@ body {
 }
 #section1 .inner {
   max-width: 1720px;
-  margin: 0 auto;
+  margin: 0px auto;
   height: 651px;
+  padding-top: 50px;
 }
 #section1 .inner .title {
   margin-left: 350px;
@@ -364,13 +349,12 @@ body {
   animation: neon-flicker 1s infinite alternate;
   font-weight: bold;
 }
-#section1 .inner .shadow {
-  margin-left: 350px;
+#section1 .inner .title .shadow {
+  margin-left: 6px;
   position: absolute;
-  top: 134px;
-  left: 104px;
+  top: 0;
 }
-#section1 .inner .shadow h2 {
+#section1 .inner .title .shadow h2 {
   font-size: 80px;
   font-weight: bold;
 }
@@ -389,10 +373,10 @@ body {
   margin-top: 10px;
 }
 #section1 .inner .profile_wrap .profile {
-  padding: 0 20px;
+  padding: 0 30px;
   margin-top: 80px;
   margin-left: 75px;
-  width: 250px;
+  width: 300px;
   height: 250px;
   z-index: 9;
 }
@@ -420,6 +404,42 @@ body {
   display: block;
   margin-top: 10px;
   font-size: 18px;
+}
+#section1 .inner .profile_wrap .profile .btn_wrap {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+#section1 .inner .profile_wrap .profile .btn_wrap .btn {
+  border: 1px solid #333;
+  color: #333;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s;
+}
+#section1 .inner .profile_wrap .profile .btn_wrap .btn::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  transition: all 0.4s;
+  background: rgb(246, 195, 217);
+  background: linear-gradient(90deg, rgb(246, 195, 217) 0%, rgb(203, 125, 255) 47%, rgb(207, 180, 255) 100%);
+}
+#section1 .inner .profile_wrap .profile .btn:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+#section1 .inner .profile_wrap .profile .btn:hover::after {
+  width: 100%;
+  z-index: -1;
 }
 #section1 .inner .profile_wrap .profile_info {
   padding-left: 40px;
@@ -487,20 +507,42 @@ body {
 }
 
 /* #section1 end */
+#section2 {
+  background: rgb(119, 123, 224);
+  background: radial-gradient(circle, rgb(119, 123, 224) 0%, rgb(135, 145, 239) 35%, rgb(108, 119, 219) 100%);
+  position: relative;
+}
+#section2 .background_img {
+  position: absolute;
+  top: 30%;
+  right: 17%;
+  width: 415px;
+  height: 453px;
+  mix-blend-mode: multiply;
+}
+#section2 .background_img figure {
+  height: 100%;
+}
+#section2 .background_img figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+}
 #section2 .bg {
   height: 715px;
-  background-color: #EBD7FF;
 }
 #section2 .bg .inner {
   max-width: 1720px;
   margin: 0 auto;
   height: 651px;
+  padding-top: 40px;
 }
 #section2 .bg .inner .title {
   width: 100%;
   text-align: left;
   padding-left: 135px;
-  padding-top: 10px;
   font-family: "Staatliches", sans-serif;
 }
 #section2 .bg .inner .title span {
@@ -519,13 +561,13 @@ body {
   top: 50%;
   right: 53%;
   transform: translateY(-50%);
-  color: #ad7edb;
+  color: #fff;
 }
 #section2 .bg .inner .swiper .swiper-button-prev {
   top: 50%;
   left: 8%;
   transform: translateY(-50%);
-  color: #ad7edb;
+  color: white;
 }
 #section2 .bg .inner .swiper-slide .list {
   margin-top: 40px;
@@ -536,12 +578,133 @@ body {
 #section2 .bg .inner .swiper-slide .mockup_wrap {
   width: 40%;
 }
+#section2 .bg .inner .swiper-slide .mockup_wrap p {
+  margin-right: 120px;
+  padding-bottom: 10px;
+  text-align: right;
+  color: #fff;
+}
 #section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup {
   position: relative;
 }
 #section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup img {
   width: 587px;
   height: 594px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .nintendo_scroll {
+  background: url(img/닌텐도_리뉴얼_pc.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .f5nature_scroll {
+  background: url(img/F5NATURE_PC_ver.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .aromatica_scroll {
+  background: url(img/aromatica_pc_ver.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .gongcha_scroll {
+  background: url(img/공차_리디자인.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .cgv_scroll {
+  background: url(img/CGV_PCVER.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+@keyframes nintendo {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -2000px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes f5nature {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -1990px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes aromatica {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -600px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes gongcha {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -810px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes cgv {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -557px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .nintendo_scroll:hover {
+  animation: nintendo 18s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .f5nature_scroll:hover {
+  animation: f5nature 15s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .aromatica_scroll:hover {
+  animation: aromatica 12s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .gongcha_scroll:hover {
+  animation: gongcha 12s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .cgv_scroll:hover {
+  animation: cgv 12s infinite ease-in-out;
 }
 #section2 .bg .inner .swiper-slide .mockup_wrap .mobile_mockup {
   position: absolute;
@@ -552,12 +715,94 @@ body {
   width: 148px;
   height: 285px;
 }
+#section2 .bg .inner .swiper-slide .mockup_wrap .nintendoscroll_img {
+  background: url(img/닌텐도_리뉴얼_모바일.png) no-repeat;
+  background-size: cover;
+  width: 134px;
+  height: 272px;
+  border-radius: 20px;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .f5naturescroll_img {
+  background: url(img/F5NATURE_mobile_ver.png) no-repeat;
+  background-size: cover;
+  width: 134px;
+  height: 272px;
+  border-radius: 20px;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .aromaticascroll_img {
+  background: url(img/aromatica_mobilever.png) no-repeat;
+  background-size: cover;
+  width: 134px;
+  height: 272px;
+  border-radius: 20px;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .icon {
+  display: inline-block;
+  background: url(img/camera.png) no-repeat;
+  background-size: cover;
+  width: 52px;
+  height: 16px;
+  position: absolute;
+  top: 7px;
+  left: 50px;
+  z-index: 1;
+}
+@keyframes nintendomobile {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -1088px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes f5naturemobile {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -1088px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes aromaticamobile {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -950px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+#section2 .bg .inner .swiper-slide .mobile_mockup .nintendoscroll_img:hover {
+  animation: nintendomobile 15s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mobile_mockup .f5naturescroll_img:hover {
+  animation: f5naturemobile 15s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mobile_mockup .aromaticascroll_img:hover {
+  animation: aromaticamobile 12s infinite ease-in-out;
+}
 #section2 .bg .inner .swiper-slide .text_box {
   position: relative;
   width: 40%;
   height: 500px;
   border-radius: 30px;
-  border: 1px solid #333;
   padding: 30px;
 }
 #section2 .bg .inner .swiper-slide .text_box .main_title {
@@ -566,6 +811,7 @@ body {
 #section2 .bg .inner .swiper-slide .text_box .main_title h2 {
   font-size: 50px;
   font-family: "Staatliches", sans-serif;
+  color: #fff;
 }
 #section2 .bg .inner .swiper-slide .text_box .sub_title ul li {
   margin-bottom: 25px;
@@ -576,24 +822,29 @@ body {
   padding-right: 20px;
   font-size: 20px;
   font-weight: bold;
+  color: #fff;
 }
 #section2 .bg .inner .swiper-slide .text_box .sub_title ul li span:nth-child(2) {
   display: inline-block;
   padding-left: 20px;
   font-size: 20px;
+  color: #fff;
 }
 #section2 .bg .inner .swiper-slide .text_box .btn_wrap {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 #section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn {
   position: relative;
+  width: 200px;
   padding: 14px 40px;
   border-radius: 15px;
   border: none;
-  color: #333;
+  color: #fff;
   cursor: pointer;
   outline: none;
-  border: 1px solid #333;
+  border: 1px solid #fff;
   overflow: hidden;
   font-size: 16px;
   text-transform: uppercase;
@@ -619,14 +870,17 @@ body {
 }
 #section2 .bg .inner .swiper-slide .text_box .btn_wrap .btn:hover {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid #76c1ff;
+  color: #bbf1ff;
 }
 
 /* #section2 end */
+#section3 {
+  background: rgb(119, 123, 224);
+  background: radial-gradient(circle, rgb(119, 123, 224) 0%, rgb(134, 144, 238) 35%, rgb(107, 123, 222) 100%);
+}
 #section3 .bg {
   height: 715px;
-  background-color: #EBD7FF;
 }
 #section3 .inner {
   max-width: 1720px;
@@ -654,7 +908,7 @@ body {
   align-items: center;
   margin-top: 80px;
   height: 500px;
-  background-color: rgba(219, 109, 253, 0.2549019608);
+  background-color: rgb(194, 198, 255);
   box-shadow: 5px 3px 5px 3px rgba(51, 51, 51, 0.5254901961);
 }
 #section3 .inner .list .title_box {
@@ -704,10 +958,21 @@ body {
 #section3 .inner .list .design span {
   display: block;
   margin-bottom: 10px;
+  font-size: 14px;
+  padding-left: 20px;
 }
 #section3 .inner .list .design span::before {
-  content: url(img/icons8-star-24.png);
+  display: block;
+  content: "";
+  background-image: url(img/icons8-별-48.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
   vertical-align: middle;
+  position: absolute;
+  top: -3px;
+  left: 0;
 }
 #section3 .inner .list .swiper-slide {
   overflow: hidden;
@@ -740,9 +1005,39 @@ body {
 }
 
 /* section3 end */
+#section4 {
+  background: url(img/bg.png) center center/cover no-repeat;
+}
+@keyframes rotate {
+  0% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+  }
+}
+#section4 .stars {
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  perspective-origin: 50% 100%;
+  left: 50%;
+  animation: rotate 90s infinite linear;
+}
+#section4 .star {
+  width: 2px;
+  height: 2px;
+  background: #F7F7B6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0 -300px;
+  transform: translate3d(0, 0, -300px);
+  backface-visibility: hidden;
+}
 #section4 .bg {
   height: 715px;
-  background-color: #EBD7FF;
 }
 #section4 .inner {
   max-width: 1720px;
@@ -770,22 +1065,30 @@ body {
 }
 #section4 .inner .info_wrap .my_info p {
   font-size: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 #section4 .inner .info_wrap .my_info span {
   font-size: 25px;
 }
 #section4 .inner .info_wrap .my_info p::before {
-  content: url(img/Vector.png);
+  content: "";
+  background-image: url(img/Vector.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
   display: inline-block;
-  width: 35px;
-  height: 20px;
+  width: 40px;
+  height: 30px;
+  vertical-align: middle;
 }
 #section4 .inner .info_wrap .my_info span::before {
-  content: url(img/Vector_letter.png);
+  content: "";
+  background-image: url(img/icons8-새-게시물-30.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
   display: inline-block;
-  width: 50px;
-  height: 20px;
+  width: 40px;
+  height: 30px;
+  vertical-align: middle;
 }
 #section4 .inner .text_slide {
   overflow: hidden;
@@ -795,7 +1098,7 @@ body {
   font-family: "Staatliches", sans-serif;
   font-size: 40px;
   color: transparent;
-  -webkit-text-stroke: 1px #333;
+  -webkit-text-stroke: 1px #f6ff70;
   padding: 30px 0;
   animation: textslide 20s infinite linear;
   font-size: 50px;
@@ -804,6 +1107,30 @@ body {
 @keyframes textslide {
   100% {
     transform: translateX(-100%); /* 시작이 0일때는 생략가능 */
+  }
+}
+#section4 .bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: rotate(180deg);
+}
+#section4 .bottom span {
+  display: block;
+  animation: move 0.7s linear 0s infinite alternate;
+  margin-top: 0;
+}
+#section4 .bottom span img {
+  width: 45px;
+  height: 40px;
+}
+@keyframes move {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 10px;
   }
 }
 

@@ -35,7 +35,7 @@ body {
 }
 
 #fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active+.fp-tooltip {
-    color: #333;
+    color: #fff;
 }
 
 .fp-viewing-cont1 .depth01:first-child {
@@ -54,20 +54,12 @@ body {
     color: #CB98FF;
 }
 
-.fp-viewing-cont3 .header {
-    background-color: #fff;
-}
-
 .fp-viewing-cont3 .header .inner {
     height: 100px;
 }
 
 .fp-viewing-cont3 .header .inner .marker {
     bottom: -30px;
-}
-
-.fp-viewing-cont3 .header {
-    background-color: #fff;
 }
 
 .fp-viewing-cont4 .header .inner {
@@ -78,19 +70,12 @@ body {
     bottom: -30px;
 }
 
-.fp-viewing-cont5 .header {
-    background-color: #fff;
-}
-
 .fp-viewing-cont5 .header .inner {
     height: 100px;
 }
 
 .fp-viewing-cont5 .header .inner .marker {
     bottom: -30px;
-}
-.fp-viewing-cont6 .header {
-    background-color: #fff;
 }
 
 .fp-viewing-cont6 .header .inner {
@@ -157,7 +142,7 @@ body {
     background: url(img/bg.png)center center / cover no-repeat;
     height: 100vh;
     font-family: 'Pretendard-Regular';
-    &::after {
+/*     &::after {
         content: '';
         width: 1px;
         height: 100vh;
@@ -175,7 +160,7 @@ body {
         display: block;
         background-color: #fff;
         z-index: 999;
-    }
+    } */
 
     @keyframes rotate {
         0% {
@@ -206,7 +191,6 @@ body {
         transform: translate3d(0, 0, -300px);
         backface-visibility: hidden;
       }
-
         .shine1 {
             position: absolute;
             top:20%;
@@ -305,7 +289,7 @@ body {
 #section1 {
     position: relative;
     background: url(img/bg2.png) center center / cover no-repeat;
-    &::after {
+/*     &::after {
         content: '';
         width: 1px;
         height: 100vh;
@@ -323,7 +307,8 @@ body {
         display: block;
         background-color: #fff;
         z-index: 999;
-    }
+    } */
+
     @keyframes rotate {
         0% {
           transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
@@ -356,8 +341,9 @@ body {
 
     .inner {
         max-width: 1720px;
-        margin: 0 auto;
+        margin: 0px auto;
         height: 651px;
+        padding-top: 50px;
         .title {
             margin-left: 350px;
             position: relative;
@@ -368,15 +354,14 @@ body {
             animation: neon-flicker 1s infinite alternate;
             font-weight: bold;
             }
-        }
-        .shadow{
-            margin-left: 350px;
-            position: absolute;
-            top:134px;
-            left: 104px;
-        h2 {
-            font-size: 80px;
-            font-weight: bold;
+            .shadow{
+                margin-left: 6px;
+                position: absolute;
+                top:0;
+            h2 {
+                font-size: 80px;
+                font-weight: bold;
+            }
         }
     }
     @keyframes neon-flicker {
@@ -401,10 +386,10 @@ body {
     margin-top: 10px;
 
 .profile {
-    padding:0 20px;
+    padding:0 30px;
     margin-top: 80px;
     margin-left: 75px;
-    width: 250px;
+    width: 300px;
     height: 250px;
     z-index: 9;
 
@@ -431,8 +416,45 @@ img {
         margin-top: 10px;
         font-size: 18px;
     }
+    }
+    .btn_wrap {
+        margin-top: 20px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        .btn {
+            border: 1px solid #333;
+            color: #333;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s;
+        }
+        .btn::after {
+            content: "";
+            width: 0%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            left: 0;
+            transition: all 0.4s;
+            background: rgb(246,195,217);
+            background: linear-gradient(90deg, rgba(246,195,217,1) 0%, rgba(203,125,255,1) 47%, rgba(207,180,255,1) 100%);
+        }
+    }
+    .btn:hover {
+        color: #fff;
+        border: 1px solid #fff;
+    }
+    .btn:hover::after {
+        width: 100%;
+        z-index: -1;
+    }
 }
-}
+
 .profile_info {
     padding-left: 40px;
     h3 {
@@ -507,19 +529,39 @@ img {
 }/* #section1 end */
 
 #section2 {
+    background: rgb(119,123,224);
+    background: radial-gradient(circle, rgba(119,123,224,1) 0%, rgba(135,145,239,1) 35%, rgba(108,119,219,1) 100%);
+    position: relative;
+
+    .background_img {
+        position: absolute;
+        top:30%;
+        right: 17%;
+        width: 415px;
+        height: 453px;
+        mix-blend-mode: multiply;
+        figure {
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0.7;
+            }
+        }
+    }
     .bg{
         height: 715px;
-        background-color: #EBD7FF;
     
     .inner {
         max-width: 1720px;
         margin: 0 auto;
         height: 651px;
+        padding-top: 40px;
         .title{
             width: 100%;
             text-align: left;
             padding-left: 135px;
-            padding-top: 10px;
             font-family: "Staatliches", sans-serif;
             span {
                 -webkit-text-stroke: 0;
@@ -537,13 +579,13 @@ img {
             top:50%;
             right: 53%;
             transform: translateY(-50%);
-            color: #ad7edb;
+            color: #fff;
         }
         .swiper-button-prev {
             top:50%;
             left: 8%;
             transform: translateY(-50%);
-            color: #ad7edb;
+            color: #ffff;
         }
     }
     .swiper-slide {
@@ -555,12 +597,138 @@ img {
         }
     .mockup_wrap {
         width: 40%;
+        p {
+            margin-right: 120px;
+            padding-bottom: 10px;
+            text-align: right;
+            color: #fff;
+        }
         .pc_mockup {
             position: relative;
             img {
                 width: 587px;
                 height: 594px;
             }
+            .nintendo_scroll {
+                background: url(img/닌텐도_리뉴얼_pc.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
+            .f5nature_scroll {
+                background: url(img/F5NATURE_PC_ver.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
+            .aromatica_scroll {
+                background: url(img/aromatica_pc_ver.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
+            .gongcha_scroll {
+                background: url(img/공차_리디자인.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
+            .cgv_scroll {
+                background: url(img/CGV_PCVER.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
+        }
+        @keyframes nintendo {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -2000px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+        @keyframes f5nature {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -1990px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+        @keyframes aromatica {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -600px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+        @keyframes gongcha {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -810px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+        @keyframes cgv {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -557px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
+        .pc_mockup .nintendo_scroll:hover {
+            animation: nintendo 18s infinite ease-in-out;
+        }
+        .pc_mockup .f5nature_scroll:hover {
+            animation: f5nature 15s infinite ease-in-out;
+        }
+        .pc_mockup .aromatica_scroll:hover {
+            animation: aromatica 12s infinite ease-in-out;
+        }
+        .pc_mockup .gongcha_scroll:hover {
+            animation: gongcha 12s infinite ease-in-out;
+        }
+        .pc_mockup .cgv_scroll:hover {
+            animation: cgv 12s infinite ease-in-out;
         }
         .mobile_mockup {
             position: absolute;
@@ -571,19 +739,105 @@ img {
                 width: 148px;
                 height: 285px;
         }
+        .nintendoscroll_img {
+            background: url(img/닌텐도_리뉴얼_모바일.png) no-repeat;
+            background-size: cover;
+            width: 134px;
+            height: 272px;
+            border-radius: 20px;
+            position: absolute;
+            top:6px;
+            left: 7px;
+        }
+        .f5naturescroll_img {
+            background: url(img/F5NATURE_mobile_ver.png) no-repeat;
+            background-size: cover;
+            width: 134px;
+            height: 272px;
+            border-radius: 20px;
+            position: absolute;
+            top:6px;
+            left: 7px;
+        }
+        .aromaticascroll_img {
+            background: url(img/aromatica_mobilever.png) no-repeat;
+            background-size: cover;
+            width: 134px;
+            height: 272px;
+            border-radius: 20px;
+            position: absolute;
+            top:6px;
+            left: 7px;
+        }
+        .icon {
+            display: inline-block;
+            background: url(img/camera.png) no-repeat ;
+            background-size: cover;
+            width: 52px;
+            height: 16px;
+            position: absolute;
+            top:7px;
+            left: 50px;
+            z-index: 1;
+        }
+    }
+    @keyframes nintendomobile {
+        0%{
+        background-position: 0 0;
+    }
+        50% {
+            background-position: 0 -1088px;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+    @keyframes f5naturemobile {
+        0%{
+        background-position: 0 0;
+    }
+        50% {
+            background-position: 0 -1088px;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+    @keyframes aromaticamobile {
+        0%{
+        background-position: 0 0;
+    }
+        50% {
+            background-position: 0 -950px;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+    .mobile_mockup .nintendoscroll_img:hover {
+        animation: nintendomobile 15s infinite ease-in-out;
+    }
+    .mobile_mockup .f5naturescroll_img:hover {
+        animation: f5naturemobile 15s infinite ease-in-out;
+    }
+    .mobile_mockup .aromaticascroll_img:hover {
+        animation: aromaticamobile 12s infinite ease-in-out;
     }
     .text_box {
         position: relative;
         width: 40%;
         height: 500px;
         border-radius: 30px;
-        border: 1px solid #333;
         padding: 30px;
         .main_title {
             margin-bottom: 80px;
             h2 {
                 font-size: 50px;
                 font-family: "Staatliches", sans-serif;
+                color: #fff;
             }
         }
         .sub_title {
@@ -596,11 +850,13 @@ img {
                 padding-right: 20px;
                 font-size: 20px;
                 font-weight: bold;
+                color: #fff;
                }
                span:nth-child(2) {
                 display: inline-block;
                 padding-left: 20px;
                 font-size: 20px;
+                color: #fff;
                }
                
             }
@@ -609,15 +865,18 @@ img {
 
     .btn_wrap{
         display: flex;
+        flex-direction: column;
+        gap: 10px;
         .btn {
             position: relative;
+            width: 200px;
             padding: 14px 40px;
             border-radius: 15px;
             border: none;
-            color: #333;
+            color: #fff;
             cursor: pointer;
             outline: none;
-            border: 1px solid #333;
+            border: 1px solid #fff;
             overflow: hidden;
             font-size: 16px;
             text-transform: uppercase;
@@ -643,8 +902,8 @@ img {
         }
         .btn:hover {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: 1px solid #fff;
-            color: #fff;
+            border: 1px solid #76c1ff;
+            color: #bbf1ff;
         }
     }
     }
@@ -654,9 +913,10 @@ img {
 }/* #section2 end */
 
 #section3 {
+    background: rgb(119,123,224);
+    background: radial-gradient(circle, rgba(119,123,224,1) 0%, rgba(134,144,238,1) 35%, rgba(107,123,222,1) 100%);
     .bg {
         height: 715px;
-        background-color: #EBD7FF;
     }
     .inner {
         max-width: 1720px;
@@ -684,7 +944,7 @@ img {
         align-items: center;
         margin-top: 80px;
         height: 500px;
-        background-color: #db6dfd41;
+        background-color: rgb(194 198 255);
         box-shadow: 5px 3px 5px 3px #33333386;
 
         .title_box {
@@ -736,10 +996,21 @@ img {
         .design span {
             display: block;
             margin-bottom: 10px;
+            font-size: 14px;
+            padding-left: 20px;
         }
         .design span::before {
-            content: url(img/icons8-star-24.png);
+            display: block;
+            content: '';
+            background-image: url(img/icons8-별-48.png);
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            width: 20px;
+            height: 20px;
             vertical-align: middle;
+            position: absolute;
+            top:-3px;
+            left: 0;
         }
         .swiper-slide {
             overflow: hidden;
@@ -776,9 +1047,39 @@ img {
 }/* section3 end */
 
 #section4 {
+    background: url(img/bg.png)center center / cover no-repeat;
+
+    @keyframes rotate {
+        0% {
+          transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+        }
+        100% {
+          transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+        }
+      }
+      .stars {
+        transform: perspective(500px);
+        transform-style: preserve-3d;
+        position: absolute;
+        bottom: 0;
+        perspective-origin: 50% 100%;
+        left: 50%;
+        animation: rotate 90s infinite linear;
+      }
+      
+      .star {
+        width: 2px;
+        height: 2px;
+        background: #F7F7B6;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: 0 0 -300px;
+        transform: translate3d(0, 0, -300px);
+        backface-visibility: hidden;
+      }
     .bg {
         height: 715px;
-        background-color: #EBD7FF;
     }
     .inner {
         max-width: 1720px;
@@ -804,22 +1105,30 @@ img {
                 margin-top: 15px;
                 p{
                     font-size: 25px;
-                    margin-bottom: 10px;
+                    margin-bottom: 15px;
                 }
                 span {
                     font-size: 25px;
                 }
                 p::before {
-                    content: url(img/Vector.png);
+                    content: '';
+                    background-image: url(img/Vector.png);
+                    background-size: 30px 30px;
+                    background-repeat: no-repeat;
                     display: inline-block;
-                    width: 35px;
-                    height: 20px;
+                    width: 40px;
+                    height: 30px;
+                    vertical-align: middle;
                 }
                 span::before {
-                    content: url(img/Vector_letter.png);
+                    content: '';
+                    background-image: url(img/icons8-새-게시물-30.png);
+                    background-size: 30px 30px;
+                    background-repeat: no-repeat;
                     display: inline-block;
-                    width: 50px;
-                    height: 20px;
+                    width: 40px;
+                    height: 30px;
+                    vertical-align: middle;
                 }
             }
         }
@@ -830,7 +1139,7 @@ img {
             font-family: "Staatliches", sans-serif;
             font-size: 40px;
             color: transparent;
-            -webkit-text-stroke: 1px #333;
+            -webkit-text-stroke: 1px #f6ff70;
             padding: 30px 0;
             animation: textslide 20s infinite linear;
             font-size: 50px;
@@ -843,6 +1152,25 @@ img {
             }
         }
 }
+        .bottom {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            transform: rotate(180deg);
+            span {
+                display: block;
+                animation: move 0.7s linear 0s infinite alternate; margin-top: 0;
+                img {
+                    width: 45px;
+                    height: 40px;
+                }
+            }
+        }
+        @keyframes move {
+            0% {margin-top: 0px;}
+            100% {margin-top: 10px;}
+        }
 }/* #section4 end */
 
 #fp-nav li:last-child{
