@@ -18,6 +18,7 @@ body {
     line-height: 1;
     color: #333;
     font-family: 'Pretendard-Regular';
+    min-width: 1720px;
 }
 
 #fp-nav ul li a span {
@@ -798,7 +799,7 @@ img {
         background-position: 0 0;
     }
         50% {
-            background-position: 0 -1088px;
+            background-position: 0 -1600px;
         }
 
         100% {
