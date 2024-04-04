@@ -619,6 +619,15 @@ body {
   top: 24px;
   left: 24px;
 }
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .afterblow_scroll {
+  background: url(img/afterblow_pc_ver.png) no-repeat;
+  background-size: cover;
+  width: 540px;
+  height: 304px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
 #section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .gongcha_scroll {
   background: url(img/공차_리디자인.png) no-repeat;
   background-size: cover;
@@ -670,6 +679,17 @@ body {
     background-position: 0 0;
   }
 }
+@keyframes afterblow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -1285px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 @keyframes gongcha {
   0% {
     background-position: 0 0;
@@ -700,6 +720,9 @@ body {
 }
 #section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .aromatica_scroll:hover {
   animation: aromatica 12s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .afterblow_scroll:hover {
+  animation: afterblow 15s infinite ease-in-out;
 }
 #section2 .bg .inner .swiper-slide .mockup_wrap .pc_mockup .gongcha_scroll:hover {
   animation: gongcha 12s infinite ease-in-out;
@@ -987,7 +1010,6 @@ body {
 }
 #section3 .inner .list .swiper-slide .item {
   width: 270px;
-  transition: all 0.3s ease-out;
 }
 #section3 .inner .list .swiper-slide .item figure {
   height: 400px;
@@ -999,6 +1021,7 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all 0.5s;
 }
 #section3 .inner .list .swiper-slide .tool_text {
   margin-top: 10px;
@@ -1008,8 +1031,10 @@ body {
   padding-left: 10px;
   text-align: left;
 }
-#section3 .inner .list .swiper-slide .item:hover {
+#section3 .inner .list .swiper-slide .item:hover img {
+  border-radius: 15px;
   transform: scale(0.8);
+  transition: all 0.5s;
 }
 
 /* section3 end */

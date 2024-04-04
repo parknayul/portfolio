@@ -637,6 +637,15 @@ img {
                 top:24px;
                 left: 24px;
             }
+            .afterblow_scroll {
+                background: url(img/afterblow_pc_ver.png) no-repeat;
+                background-size: cover;
+                width: 540px;
+                height: 304px;
+                position: absolute;
+                top:24px;
+                left: 24px;
+            }
             .gongcha_scroll {
                 background: url(img/공차_리디자인.png) no-repeat;
                 background-size: cover;
@@ -692,6 +701,18 @@ img {
                 background-position: 0 0;
             }
         }
+        @keyframes afterblow {
+            0%{
+            background-position: 0 0;
+        }
+            50% {
+                background-position: 0 -1285px;
+            }
+
+            100% {
+                background-position: 0 0;
+            }
+        }
         @keyframes gongcha {
             0%{
             background-position: 0 0;
@@ -724,6 +745,9 @@ img {
         }
         .pc_mockup .aromatica_scroll:hover {
             animation: aromatica 12s infinite ease-in-out;
+        }
+        .pc_mockup .afterblow_scroll:hover {
+            animation: afterblow 15s infinite ease-in-out;
         }
         .pc_mockup .gongcha_scroll:hover {
             animation: gongcha 12s infinite ease-in-out;
@@ -1025,7 +1049,6 @@ img {
             overflow: hidden;
             .item {
                 width: 270px;
-                transition: all 0.3s ease-out;
                 figure {
                     height: 400px;
                     border-radius: 15px;
@@ -1034,6 +1057,7 @@ img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        transition: all 0.5s;
                     }
                 }
             }
@@ -1045,8 +1069,10 @@ img {
                 text-align: left;
             }
         }
-            .item:hover {
-                transform: scale(0.8)
+            .item:hover img {
+                border-radius: 15px;
+                transform: scale(0.8);
+                transition: all 0.5s;
             }
 
         }
