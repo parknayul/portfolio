@@ -459,6 +459,14 @@ body {
 }
 #section1 .inner .profile_wrap .profile_info .certificate p {
   font-size: 20px;
+  padding-right: 10px;
+}
+#section1 .inner .profile_wrap .profile_info .certificate .gtq {
+  display: flex;
+  margin-bottom: 10px;
+}
+#section1 .inner .profile_wrap .profile_info .certificate .driver_license {
+  display: flex;
 }
 #section1 .inner .profile_wrap .profile_info .education {
   margin-bottom: 50px;
@@ -769,6 +777,16 @@ body {
   top: 6px;
   left: 7px;
 }
+#section2 .bg .inner .swiper-slide .mockup_wrap .afterblowscroll_img {
+  background: url(img/afterblow_mobile_ver.png) no-repeat;
+  background-size: cover;
+  width: 134px;
+  height: 272px;
+  border-radius: 20px;
+  position: absolute;
+  top: 6px;
+  left: 7px;
+}
 #section2 .bg .inner .swiper-slide .mockup_wrap .icon {
   display: inline-block;
   background: url(img/camera.png) no-repeat;
@@ -813,6 +831,17 @@ body {
     background-position: 0 0;
   }
 }
+@keyframes afterblow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 -1550px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 #section2 .bg .inner .swiper-slide .mobile_mockup .nintendoscroll_img:hover {
   animation: nintendomobile 15s infinite ease-in-out;
 }
@@ -821,6 +850,9 @@ body {
 }
 #section2 .bg .inner .swiper-slide .mobile_mockup .aromaticascroll_img:hover {
   animation: aromaticamobile 12s infinite ease-in-out;
+}
+#section2 .bg .inner .swiper-slide .mobile_mockup .afterblowscroll_img:hover {
+  animation: afterblow 15s infinite ease-in-out;
 }
 #section2 .bg .inner .swiper-slide .text_box {
   position: relative;
