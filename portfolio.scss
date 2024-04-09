@@ -673,6 +673,9 @@ img {
                 left: 24px;
             }
         }
+        .pc_mockup img:last-child{
+            width: 700px;
+        }
         @keyframes nintendo {
             0%{
             background-position: 0 0;
