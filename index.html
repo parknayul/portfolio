@@ -34,7 +34,7 @@
                 showActiveTooltip: true,
             });//fullpage
 
-            let depth01 = $('.depth01>a');
+            /* let depth01 = $('.depth01>a');
 
             console.log($('.depth01 a').position().left)
             $('.depth01').mouseenter(function () {
@@ -52,6 +52,22 @@
             depth01.mouseleave(function () {
                 $('.marker').stop().animate({
                     left: '-100%' // 왼쪽으로 이동하여 사라지도록 애니메이션 적용
+                });
+            }); */
+
+            $('.depth01').mouseenter(function () {
+                // 마우스가 진입했을 때의 동작
+                let move = $(this).position().left;
+                let thisWidth = $(this).outerWidth();
+                let moveLeft = thisWidth * 0.5;
+                $('.marker').stop().css({
+                    left: move + moveLeft,
+                    opacity: 1 // 마커 표시
+                });
+            }).mouseleave(function () {
+                // 마우스가 벗어났을 때의 동작
+                $('.marker').stop().animate({
+                    opacity: 0 // 마커 투명도 0으로 설정하여 사라지도록 애니메이션 적용
                 });
             });
 
@@ -80,7 +96,7 @@
             //팬시박스
             $(document).ready(function () {
                 $("[data-fancybox]").fancybox({
-                    // 여기에 FancyBox 설정을 추가할 수 있습니다.
+                    // 여기에 FancyBox 설정을 추가
 
                 });
             });
@@ -202,7 +218,7 @@
                 <div class="profile_wrap">
                     <div class="profile">
                         <div class="profile_img">
-                            <img src="img/리락쿠마_수정.png" alt="프로필 이미지" />
+                            <img src="img/증명사진.png" alt="프로필 이미지" />
                         </div> <!-- .profile_img end -->
                         <div class="text">
                             <h4>박 나 율</h4>
@@ -322,7 +338,7 @@
                                                     </a>
                                                 </div><!-- .btn end -->
                                                 <div class="btn">
-                                                    <a href="process/닌텐도_디자인_프로세스.pdf"target="_blank">
+                                                    <a href="process/닌텐도_디자인_프로세스.pdf" target="_blank">
                                                         process
                                                     </a>
                                                 </div><!-- .btn end -->
@@ -680,7 +696,8 @@
                                         <div class="wrapping">
                                             <div class="btn_wrap">
                                                 <div class="btn">
-                                                    <a href="https://www.figma.com/proto/zEj6T7tM3njh4RrchB1NxJ/Nescafe-dolcegusto(process)?type=design&node-id=1-2&t=uHFwD8SMrD3Yerwx-0&scaling=min-zoom&page-id=0%3A1" target="_blank">
+                                                    <a href="https://www.figma.com/proto/zEj6T7tM3njh4RrchB1NxJ/Nescafe-dolcegusto(process)?type=design&node-id=1-2&t=uHFwD8SMrD3Yerwx-0&scaling=min-zoom&page-id=0%3A1"
+                                                        target="_blank">
                                                         Process
                                                     </a>
                                                 </div><!-- .btn end -->
